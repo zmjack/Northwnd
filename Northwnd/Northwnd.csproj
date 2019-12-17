@@ -2,11 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.0.2</Version>
+    <Version>0.0.5</Version>
     <Authors>zmjack</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Northwnd</PackageId>
     <Description>Simple database Northwnd for Code First.</Description>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/zmjack/Northwnd</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/zmjack/Northwnd</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Northwnd CodeFirst Sqlite</PackageTags>
+    <Copyright>Copyright © dawnx.net 2018-2019</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -15,6 +21,10 @@
 
   <ItemGroup>
     <None Remove="@Resources\SimpleData\Northwnd.png" />
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
