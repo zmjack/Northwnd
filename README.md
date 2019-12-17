@@ -4,6 +4,18 @@ Simple database Northwnd for Code First.
 
 
 
+## Install
+
+**Package Manager**
+
+> Install-Package Northwnd
+
+**.NET CLI**
+
+> dotnet add package Northwnd
+
+
+
 ## How to use?
 
 Regions are defined in database:
