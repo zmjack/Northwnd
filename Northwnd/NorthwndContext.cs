@@ -110,7 +110,7 @@ namespace Northwnd
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Product>()
-                .HasMany(e => e.Order_Details)
+                .HasMany(e => e.OrderDetails)
                 .WithOne(e => e.Product)
                 .OnDelete(DeleteBehavior.Restrict);
 
