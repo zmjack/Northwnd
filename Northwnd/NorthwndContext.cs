@@ -8,8 +8,6 @@ namespace Northwnd
 {
     public class NorthwndContext : DbContext
     {
-        public virtual string TablePrefix { get; }
-
         public NorthwndContext(DbContextOptions options)
             : base(options)
         {
@@ -47,18 +45,6 @@ namespace Northwnd
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Category>().ToTable($"{TablePrefix}{nameof(Categories)}");
-            modelBuilder.Entity<CustomerDemographic>().ToTable($"{TablePrefix}{nameof(CustomerDemographics)}");
-            modelBuilder.Entity<Customer>().ToTable($"{TablePrefix}{nameof(Customers)}");
-            modelBuilder.Entity<Employee>().ToTable($"{TablePrefix}{nameof(Employees)}");
-            modelBuilder.Entity<OrderDetail>().ToTable($"{TablePrefix}{nameof(OrderDetails)}");
-            modelBuilder.Entity<Order>().ToTable($"{TablePrefix}{nameof(Orders)}");
-            modelBuilder.Entity<Product>().ToTable($"{TablePrefix}{nameof(Products)}");
-            modelBuilder.Entity<Region>().ToTable($"{TablePrefix}{nameof(Regions)}");
-            modelBuilder.Entity<Shipper>().ToTable($"{TablePrefix}{nameof(Shippers)}");
-            modelBuilder.Entity<Supplier>().ToTable($"{TablePrefix}{nameof(Suppliers)}");
-            modelBuilder.Entity<Territory>().ToTable($"{TablePrefix}{nameof(Territories)}");
-
             modelBuilder.Entity<CustomerCustomerDemo>().HasKey(e => new { e.CustomerTypeID, e.CustomerID });
             modelBuilder.Entity<EmployeeTerritory>().HasKey(e => new { e.EmployeeID, e.TerritoryID });
             modelBuilder.Entity<OrderDetail>().HasKey(e => new { e.OrderID, e.ProductID });
@@ -82,6 +68,21 @@ namespace Northwnd
                 .HasMany(e => e.Territories)
                 .WithOne(e => e.Region)
                 .OnDelete(DeleteBehavior.Restrict);
+        }
+
+        public void UseNorthwndPrefix(ModelBuilder modelBuilder, string prefix)
+        {
+            modelBuilder.Entity<Category>().ToTable($"{prefix}{nameof(Categories)}");
+            modelBuilder.Entity<CustomerDemographic>().ToTable($"{prefix}{nameof(CustomerDemographics)}");
+            modelBuilder.Entity<Customer>().ToTable($"{prefix}{nameof(Customers)}");
+            modelBuilder.Entity<Employee>().ToTable($"{prefix}{nameof(Employees)}");
+            modelBuilder.Entity<OrderDetail>().ToTable($"{prefix}{nameof(OrderDetails)}");
+            modelBuilder.Entity<Order>().ToTable($"{prefix}{nameof(Orders)}");
+            modelBuilder.Entity<Product>().ToTable($"{prefix}{nameof(Products)}");
+            modelBuilder.Entity<Region>().ToTable($"{prefix}{nameof(Regions)}");
+            modelBuilder.Entity<Shipper>().ToTable($"{prefix}{nameof(Shippers)}");
+            modelBuilder.Entity<Supplier>().ToTable($"{prefix}{nameof(Suppliers)}");
+            modelBuilder.Entity<Territory>().ToTable($"{prefix}{nameof(Territories)}");
         }
 
         public void WriteTo(NorthwndContext targetContext)
