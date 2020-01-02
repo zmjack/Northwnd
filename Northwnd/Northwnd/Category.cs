@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Northwnd
 {
-    public partial class Category
+    public class Category
     {
         public int CategoryID { get; set; }
 

@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Northwnd
 {
-    public partial class Employee
+    public class Employee
     {
         public int EmployeeID { get; set; }
 

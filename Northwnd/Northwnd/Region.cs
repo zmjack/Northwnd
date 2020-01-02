@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Northwnd
 {
-    public partial class Region
+    public class Region
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int RegionID { get; set; }

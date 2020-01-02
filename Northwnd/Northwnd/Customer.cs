@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Northwnd
 {
-    public partial class Customer
+    public class Customer
     {
         [StringLength(5)]
         public string CustomerID { get; set; }

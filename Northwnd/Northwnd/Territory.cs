@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Northwnd
 {
-    public partial class Territory
+    public class Territory
     {
         [StringLength(20)]
         public string TerritoryID { get; set; }

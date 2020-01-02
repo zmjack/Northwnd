@@ -8,6 +8,8 @@ namespace Northwnd
 {
     public class NorthwndContext : DbContext
     {
+        public virtual string TablePrefix { get; }
+
         public NorthwndContext(DbContextOptions options)
             : base(options)
         {
@@ -42,6 +44,45 @@ namespace Northwnd
 
         public virtual DbSet<CustomerCustomerDemo> CustomerCustomerDemos { get; set; }
         public virtual DbSet<EmployeeTerritory> EmployeeTerritories { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>().ToTable($"{TablePrefix}{nameof(Categories)}");
+            modelBuilder.Entity<CustomerDemographic>().ToTable($"{TablePrefix}{nameof(CustomerDemographics)}");
+            modelBuilder.Entity<Customer>().ToTable($"{TablePrefix}{nameof(Customers)}");
+            modelBuilder.Entity<Employee>().ToTable($"{TablePrefix}{nameof(Employees)}");
+            modelBuilder.Entity<OrderDetail>().ToTable($"{TablePrefix}{nameof(OrderDetails)}");
+            modelBuilder.Entity<Order>().ToTable($"{TablePrefix}{nameof(Orders)}");
+            modelBuilder.Entity<Product>().ToTable($"{TablePrefix}{nameof(Products)}");
+            modelBuilder.Entity<Region>().ToTable($"{TablePrefix}{nameof(Regions)}");
+            modelBuilder.Entity<Shipper>().ToTable($"{TablePrefix}{nameof(Shippers)}");
+            modelBuilder.Entity<Supplier>().ToTable($"{TablePrefix}{nameof(Suppliers)}");
+            modelBuilder.Entity<Territory>().ToTable($"{TablePrefix}{nameof(Territories)}");
+
+            modelBuilder.Entity<CustomerCustomerDemo>().HasKey(e => new { e.CustomerTypeID, e.CustomerID });
+            modelBuilder.Entity<EmployeeTerritory>().HasKey(e => new { e.EmployeeID, e.TerritoryID });
+            modelBuilder.Entity<OrderDetail>().HasKey(e => new { e.OrderID, e.ProductID });
+
+            modelBuilder.Entity<Employee>()
+                .HasMany(e => e.Subordinates)
+                .WithOne(e => e.Superordinate)
+                .HasForeignKey(e => e.ReportsTo);
+
+            modelBuilder.Entity<Order>()
+                .HasMany(e => e.Order_Details)
+                .WithOne(e => e.Order)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Product>()
+                .HasMany(e => e.OrderDetails)
+                .WithOne(e => e.Product)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Region>()
+                .HasMany(e => e.Territories)
+                .WithOne(e => e.Region)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
 
         public void WriteTo(NorthwndContext targetContext)
         {
@@ -93,32 +134,5 @@ namespace Northwnd
             }
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<CustomerCustomerDemo>().HasKey(e => new { e.CustomerTypeID, e.CustomerID });
-            modelBuilder.Entity<EmployeeTerritory>().HasKey(e => new { e.EmployeeID, e.TerritoryID });
-            modelBuilder.Entity<OrderDetail>().HasKey(e => new { e.OrderID, e.ProductID });
-
-            modelBuilder.Entity<Employee>()
-                .HasMany(e => e.Subordinates)
-                .WithOne(e => e.Superordinate)
-                .HasForeignKey(e => e.ReportsTo);
-
-            modelBuilder.Entity<Order>()
-                .HasMany(e => e.Order_Details)
-                .WithOne(e => e.Order)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Product>()
-                .HasMany(e => e.OrderDetails)
-                .WithOne(e => e.Product)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Region>()
-                .HasMany(e => e.Territories)
-                .WithOne(e => e.Region)
-                .OnDelete(DeleteBehavior.Restrict);
-
-        }
     }
 }

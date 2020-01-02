@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Northwnd
 {
-    public partial class OrderDetail
+    public class OrderDetail
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int OrderID { get; set; }

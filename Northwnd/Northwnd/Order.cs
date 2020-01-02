@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Northwnd
 {
-    public partial class Order
+    public class Order
     {
         public int OrderID { get; set; }
 
