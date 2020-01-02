@@ -39,7 +39,6 @@ namespace Northwnd
         public virtual DbSet<Shipper> Shippers { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<Territory> Territories { get; set; }
-
         public virtual DbSet<CustomerCustomerDemo> CustomerCustomerDemos { get; set; }
         public virtual DbSet<EmployeeTerritory> EmployeeTerritories { get; set; }
 
@@ -83,11 +82,12 @@ namespace Northwnd
             modelBuilder.Entity<Shipper>().ToTable($"{prefix}{nameof(Shippers)}");
             modelBuilder.Entity<Supplier>().ToTable($"{prefix}{nameof(Suppliers)}");
             modelBuilder.Entity<Territory>().ToTable($"{prefix}{nameof(Territories)}");
+            modelBuilder.Entity<CustomerCustomerDemo>().ToTable($"{prefix}{nameof(CustomerCustomerDemos)}");
+            modelBuilder.Entity<EmployeeTerritory>().ToTable($"{prefix}{nameof(EmployeeTerritories)}");
         }
 
         public void WriteTo(NorthwndContext targetContext)
         {
-            //var s = targetContext.Database.EnsureCreated();
             targetContext.Database.Migrate();
 
             using (var trans = targetContext.Database.BeginTransaction())
