@@ -24,7 +24,7 @@ namespace Northwnd
                 $@"filename=@Resources\Northwnd\northwnd.db").Options);
 #else
             return new NorthwndContext(new DbContextOptionsBuilder().UseSqlite(
-                $@"filename={NuGet.PackageFolder(Assembly.GetExecutingAssembly())}content\@Resources\Northwnd\northwnd.db").Options);
+                $@"filename={NuGet.PackageFolder(Assembly.GetExecutingAssembly())}content/@Resources/Northwnd/northwnd.db").Options);
 #endif
         }
 
