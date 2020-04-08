@@ -1,2 +1,2 @@
-nuget push "Northwnd/bin/Release/Northwnd.0.1.3.nupkg" -source nuget.org
+nuget push "Northwnd/bin/Release/Northwnd.3.0.0.nupkg" -source nuget.org
 pause

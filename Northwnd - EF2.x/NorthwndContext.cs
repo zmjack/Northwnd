@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 #if !DEBUG
-using Def;
+using NorthwndCore._extern.Def;
 using System.Reflection;
 #endif
 

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-    <Version>3.0.0-dev2</Version>
+    <Version>3.0.0</Version>
     <Authors>zmjack</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Northwnd</PackageId>
@@ -15,6 +15,8 @@
     <Copyright>Copyright © dawnx.net 2018-2019</Copyright>
     <Product>Northwnd</Product>
     <LangVersion>8.0</LangVersion>
+    <RootNamespace>Northwnd</RootNamespace>
+    <AssemblyName>Northwnd</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
