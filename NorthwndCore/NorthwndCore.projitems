@@ -22,5 +22,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Northwnd\Shipper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Northwnd\Supplier.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Northwnd\Territory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)~extern\Def\RuntimePlatform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)~extern\Def\DefSetting.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)~extern\Def\NuGet.cs" />
   </ItemGroup>
 </Project>
