@@ -18,6 +18,6 @@ namespace Northwnd
         public virtual Region Region { get; set; }
 
         public virtual ICollection<EmployeeTerritory> EmployeeTerritories { get; set; }
-        public IEnumerable<Employee> Employees => EmployeeTerritories.Select(x => x.Employee);
+        public IEnumerable<Employee> Employees => EmployeeTerritories?.Select(x => x.Employee);
     }
 }

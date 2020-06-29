@@ -44,7 +44,6 @@ namespace Northwnd
 
         public virtual ICollection<CustomerCustomerDemo> CustomerCustomerDemos { get; set; }
 
-        public virtual IEnumerable<CustomerDemographic> CustomerDemographics
-            => CustomerCustomerDemos.Select(x => x.CustomerDemographic);
+        public IEnumerable<CustomerDemographic> CustomerDemographics => CustomerCustomerDemos?.Select(x => x.CustomerDemographic);
     }
 }
