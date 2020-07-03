@@ -19,11 +19,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd - EF2.x", "Northwn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd", "Northwnd\Northwnd.csproj", "{2EAB642A-B231-4459-899B-C30BEE31F0CB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd - EF3.0", "Northwnd - EF3.0\Northwnd - EF3.0.csproj", "{A95866E1-20F5-4266-813B-63D982420C61}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		NorthwndCore\NorthwndCore.projitems*{1982e4f3-1458-45c7-b19c-7b52713537c4}*SharedItemsImports = 5
 		NorthwndCore\NorthwndCore.projitems*{2eab642a-b231-4459-899b-c30bee31f0cb}*SharedItemsImports = 5
 		NorthwndCore\NorthwndCore.projitems*{678f845b-fe31-4094-9c76-7fa0367dd169}*SharedItemsImports = 13
+		NorthwndCore\NorthwndCore.projitems*{a95866e1-20f5-4266-813b-63d982420c61}*SharedItemsImports = 5
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +45,10 @@ Global
 		{2EAB642A-B231-4459-899B-C30BEE31F0CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EAB642A-B231-4459-899B-C30BEE31F0CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EAB642A-B231-4459-899B-C30BEE31F0CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A95866E1-20F5-4266-813B-63D982420C61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A95866E1-20F5-4266-813B-63D982420C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A95866E1-20F5-4266-813B-63D982420C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A95866E1-20F5-4266-813B-63D982420C61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
