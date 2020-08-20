@@ -2,7 +2,7 @@
 
 Simple database Northwnd for Code First.
 
-
+<br/>
 
 ## Install
 
@@ -14,11 +14,13 @@ Simple database Northwnd for Code First.
 
 > dotnet add package Northwnd
 
-
+<br/>
 
 ## How to use?
 
 Regions are defined in database:
+
+> **%userprofile%/.nuget/northwnd/{version}/content/@Resources/Northwnd/northwnd.db**
 
 | RegionID | RegionDescription |
 | -------- | ----------------- |
@@ -45,8 +47,9 @@ Console output:
 > 3       Northern
 > 4       Southern
 
-
+<br/>
 
 ## Database diagram
 
 ![](https://raw.githubusercontent.com/zmjack/Northwnd/master/Northwnd/%40Resources/Northwnd/Northwnd.png)
+
