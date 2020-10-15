@@ -54,13 +54,13 @@ namespace Northwnd
                 .HasForeignKey(e => e.ReportsTo);
 
             modelBuilder.Entity<Order>()
-                .HasMany(e => e.Order_Details)
-                .WithOne(e => e.Order)
+                .HasMany(e => e.OrderDetails)
+                .WithOne(e => e.OrderLink)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Product>()
                 .HasMany(e => e.OrderDetails)
-                .WithOne(e => e.Product)
+                .WithOne(e => e.ProductLink)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Region>()

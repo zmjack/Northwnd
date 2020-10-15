@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Northwnd
 {
     public class Supplier
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SupplierID { get; set; }
 
         [Required]

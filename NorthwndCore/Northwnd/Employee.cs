@@ -8,6 +8,7 @@ namespace Northwnd
 {
     public class Employee
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int EmployeeID { get; set; }
 
         [Required]
@@ -63,6 +64,6 @@ namespace Northwnd
         public virtual ICollection<Employee> Subordinates { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
         public virtual ICollection<EmployeeTerritory> EmployeeTerritories { get; set; }
-        public IEnumerable<Territory> Territories => EmployeeTerritories?.Select(x => x.Territory);
+        public IEnumerable<Territory> Territories => EmployeeTerritories?.Select(x => x.TerritoryLink);
     }
 }

@@ -13,7 +13,6 @@ namespace Northwnd
         public string CustomerDesc { get; set; }
 
         public virtual ICollection<CustomerCustomerDemo> CustomerCustomerDemos { get; set; }
-
-        public IEnumerable<Customer> Customers => CustomerCustomerDemos?.Select(x => x.Customer);
+        public IEnumerable<Customer> Customers => CustomerCustomerDemos?.Select(x => x.CustomerLink);
     }
 }

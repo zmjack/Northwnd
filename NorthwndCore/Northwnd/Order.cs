@@ -7,11 +7,14 @@ namespace Northwnd
 {
     public class Order
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int OrderID { get; set; }
 
         [StringLength(5)]
+        [ForeignKey(nameof(CustomerLink))]
         public string CustomerID { get; set; }
 
+        [ForeignKey(nameof(EmployeeLink))]
         public int? EmployeeID { get; set; }
 
         public DateTime? OrderDate { get; set; }
@@ -44,11 +47,9 @@ namespace Northwnd
         [StringLength(15)]
         public string ShipCountry { get; set; }
 
-        public virtual Customer Customer { get; set; }
-
-        public virtual Employee Employee { get; set; }
-
-        public virtual ICollection<OrderDetail> Order_Details { get; set; }
+        public virtual Customer CustomerLink { get; set; }
+        public virtual Employee EmployeeLink { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
 
     }
 }

@@ -5,13 +5,14 @@ namespace Northwnd
 {
     public class EmployeeTerritory
     {
-        [ForeignKey(nameof(Employee))]
+        [ForeignKey(nameof(EmployeeLink))]
         public int EmployeeID { get; set; }
-        public Employee Employee { get; set; }
 
         [StringLength(20)]
-        [ForeignKey(nameof(Territory))]
+        [ForeignKey(nameof(TerritoryLink))]
         public string TerritoryID { get; set; }
-        public Territory Territory { get; set; }
+
+        public virtual Employee EmployeeLink { get; set; }
+        public virtual Territory TerritoryLink { get; set; }
     }
 }

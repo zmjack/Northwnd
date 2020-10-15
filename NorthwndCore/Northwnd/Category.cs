@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Northwnd
 {
     public class Category
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CategoryID { get; set; }
 
         [Required]

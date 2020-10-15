@@ -6,13 +6,14 @@ namespace Northwnd
     public class CustomerCustomerDemo
     {
         [StringLength(5)]
-        [ForeignKey(nameof(Customer))]
+        [ForeignKey(nameof(CustomerLink))]
         public string CustomerID { get; set; }
-        public Customer Customer { get; set; }
 
         [StringLength(10)]
-        [ForeignKey(nameof(CustomerDemographic))]
+        [ForeignKey(nameof(CustomerDemographicLink))]
         public string CustomerTypeID { get; set; }
-        public CustomerDemographic CustomerDemographic { get; set; }
+
+        public virtual Customer CustomerLink { get; set; }
+        public virtual CustomerDemographic CustomerDemographicLink { get; set; }
     }
 }

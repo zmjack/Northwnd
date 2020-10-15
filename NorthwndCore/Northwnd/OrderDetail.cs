@@ -4,10 +4,10 @@ namespace Northwnd
 {
     public class OrderDetail
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [ForeignKey(nameof(OrderLink))]
         public int OrderID { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [ForeignKey(nameof(ProductLink))]
         public int ProductID { get; set; }
 
         public double UnitPrice { get; set; }
@@ -16,8 +16,7 @@ namespace Northwnd
 
         public float Discount { get; set; }
 
-        public virtual Order Order { get; set; }
-
-        public virtual Product Product { get; set; }
+        public virtual Order OrderLink { get; set; }
+        public virtual Product ProductLink { get; set; }
     }
 }

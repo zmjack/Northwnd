@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 namespace Northwnd
 {
     public class Territory
     {
+        [Key]
         [StringLength(20)]
         public string TerritoryID { get; set; }
 
@@ -18,6 +20,6 @@ namespace Northwnd
         public virtual Region Region { get; set; }
 
         public virtual ICollection<EmployeeTerritory> EmployeeTerritories { get; set; }
-        public IEnumerable<Employee> Employees => EmployeeTerritories?.Select(x => x.Employee);
+        public IEnumerable<Employee> Employees => EmployeeTerritories?.Select(x => x.EmployeeLink);
     }
 }

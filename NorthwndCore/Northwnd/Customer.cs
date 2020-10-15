@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 namespace Northwnd
@@ -7,6 +8,7 @@ namespace Northwnd
     public class Customer
     {
         [StringLength(5)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string CustomerID { get; set; }
 
         [Required]
@@ -41,9 +43,7 @@ namespace Northwnd
         public string Fax { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }
-
         public virtual ICollection<CustomerCustomerDemo> CustomerCustomerDemos { get; set; }
-
-        public IEnumerable<CustomerDemographic> CustomerDemographics => CustomerCustomerDemos?.Select(x => x.CustomerDemographic);
+        public IEnumerable<CustomerDemographic> CustomerDemographics => CustomerCustomerDemos?.Select(x => x.CustomerDemographicLink);
     }
 }
