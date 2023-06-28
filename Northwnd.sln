@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29201.188
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1FD2C143-D0C9-4848-B37C-E47941F774C3}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,17 +17,13 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "NorthwndCore", "NorthwndCor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd - EF2.x", "Northwnd - EF2.x\Northwnd - EF2.x.csproj", "{1982E4F3-1458-45C7-B19C-7B52713537C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd - EF3.0", "Northwnd - EF3.0\Northwnd - EF3.0.csproj", "{A95866E1-20F5-4266-813B-63D982420C61}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd - EF3.1", "Northwnd - EF3.1\Northwnd - EF3.1.csproj", "{490E1EF4-DEA0-489B-B109-BE438D86DFE0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd.Memory", "Northwnd.Memory\Northwnd.Memory.csproj", "{62A02A64-712D-4069-9A49-D760C94E2F6F}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Nuget", "Nuget\Nuget.shproj", "{D4FCD5F6-ADF9-4103-A086-4DD127F4922A}"
+EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		NorthwndCore\NorthwndCore.projitems*{1982e4f3-1458-45c7-b19c-7b52713537c4}*SharedItemsImports = 5
-		NorthwndCore\NorthwndCore.projitems*{490e1ef4-dea0-489b-b109-be438d86dfe0}*SharedItemsImports = 5
-		NorthwndCore\NorthwndCore.projitems*{678f845b-fe31-4094-9c76-7fa0367dd169}*SharedItemsImports = 13
-		NorthwndCore\NorthwndCore.projitems*{a95866e1-20f5-4266-813b-63d982420c61}*SharedItemsImports = 5
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -41,19 +37,28 @@ Global
 		{1982E4F3-1458-45C7-B19C-7B52713537C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1982E4F3-1458-45C7-B19C-7B52713537C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1982E4F3-1458-45C7-B19C-7B52713537C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A95866E1-20F5-4266-813B-63D982420C61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A95866E1-20F5-4266-813B-63D982420C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A95866E1-20F5-4266-813B-63D982420C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A95866E1-20F5-4266-813B-63D982420C61}.Release|Any CPU.Build.0 = Release|Any CPU
 		{490E1EF4-DEA0-489B-B109-BE438D86DFE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{490E1EF4-DEA0-489B-B109-BE438D86DFE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{490E1EF4-DEA0-489B-B109-BE438D86DFE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{490E1EF4-DEA0-489B-B109-BE438D86DFE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62A02A64-712D-4069-9A49-D760C94E2F6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62A02A64-712D-4069-9A49-D760C94E2F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62A02A64-712D-4069-9A49-D760C94E2F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62A02A64-712D-4069-9A49-D760C94E2F6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8E0AA18B-00C6-4155-8D18-45BD4B221247}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		NorthwndCore\NorthwndCore.projitems*{1982e4f3-1458-45c7-b19c-7b52713537c4}*SharedItemsImports = 5
+		Nuget\Nuget.projitems*{1982e4f3-1458-45c7-b19c-7b52713537c4}*SharedItemsImports = 5
+		NorthwndCore\NorthwndCore.projitems*{490e1ef4-dea0-489b-b109-be438d86dfe0}*SharedItemsImports = 5
+		Nuget\Nuget.projitems*{490e1ef4-dea0-489b-b109-be438d86dfe0}*SharedItemsImports = 5
+		NorthwndCore\NorthwndCore.projitems*{62a02a64-712d-4069-9a49-d760c94e2f6f}*SharedItemsImports = 5
+		NorthwndCore\NorthwndCore.projitems*{678f845b-fe31-4094-9c76-7fa0367dd169}*SharedItemsImports = 13
+		Nuget\Nuget.projitems*{d4fcd5f6-adf9-4103-a086-4dd127f4922a}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

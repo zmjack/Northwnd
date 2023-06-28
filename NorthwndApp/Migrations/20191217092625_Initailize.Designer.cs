@@ -8,7 +8,7 @@ using Northwnd;
 
 namespace NorthwndApp.Migrations
 {
-    [DbContext(typeof(NorthwndContext))]
+    [DbContext(typeof(NorthwndMemoryContext))]
     [Migration("20191217092625_Initailize")]
     partial class Initailize
     {

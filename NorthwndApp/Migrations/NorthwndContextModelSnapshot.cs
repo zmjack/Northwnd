@@ -7,7 +7,7 @@ using Northwnd;
 
 namespace NorthwndApp.Migrations
 {
-    [DbContext(typeof(NorthwndContext))]
+    [DbContext(typeof(NorthwndMemoryContext))]
     partial class NorthwndContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

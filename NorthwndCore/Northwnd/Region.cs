@@ -6,6 +6,7 @@ namespace Northwnd
 {
     public class Region
     {
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int RegionID { get; set; }
 

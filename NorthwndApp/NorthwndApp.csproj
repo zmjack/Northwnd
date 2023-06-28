@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Northwnd - EF2.x\Northwnd - EF2.x.csproj" />
+    <ProjectReference Include="..\Northwnd.Memory\Northwnd.Memory.csproj" />
   </ItemGroup>
 
 </Project>

@@ -23,9 +23,8 @@ namespace Northwnd
 
         public DateTime? ShippedDate { get; set; }
 
-        [ForeignKey(nameof(Shipper))]
+        [ForeignKey(nameof(ShipperLink))]
         public int? ShipVia { get; set; }
-        public virtual Shipper Shipper { get; set; }
 
         public double? Freight { get; set; }
 
@@ -47,6 +46,7 @@ namespace Northwnd
         [StringLength(15)]
         public string ShipCountry { get; set; }
 
+        public virtual Shipper ShipperLink { get; set; }
         public virtual Customer CustomerLink { get; set; }
         public virtual Employee EmployeeLink { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

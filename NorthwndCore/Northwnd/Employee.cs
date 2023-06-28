@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
 
 namespace Northwnd
 {
@@ -64,6 +63,5 @@ namespace Northwnd
         public virtual ICollection<Employee> Subordinates { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
         public virtual ICollection<EmployeeTerritory> EmployeeTerritories { get; set; }
-        public IEnumerable<Territory> Territories => EmployeeTerritories?.Select(x => x.TerritoryLink);
     }
 }
