@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
@@ -15,8 +16,10 @@ namespace NorthwndCore._extern.Def
                 case RuntimePlatform.Default:
                     PackagesPath = Environment.OSVersion.Platform switch
                     {
-                        PlatformID.Win32NT => $@"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}\.nuget\packages\",
-                        PlatformID.Unix => "~/.nuget/packages/",
+                        PlatformID.Win32NT => Path.Combine(
+                            Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                            ".nuget", "packages"),
+                        PlatformID.Unix => Path.Combine("~", ".nuget", "packages"),
                         _ => throw new NotSupportedException(),
                     };
                     break;
@@ -46,8 +49,8 @@ namespace NorthwndCore._extern.Def
             var nuVersion = revision == 0 ? $"{major}.{minor}.{build}" : $"{major}.{minor}.{build}.{revision}";
 
             if (previewVersion is null)
-                return $@"{PackagesPath}{package.ToLower()}\{nuVersion}\";
-            else return $@"{PackagesPath}{package.ToLower()}\{nuVersion}-{previewVersion}\";
+                return Path.Combine(PackagesPath, package.ToLower(), nuVersion);
+            else return Path.Combine(PackagesPath, package.ToLower(), $"{nuVersion}-{previewVersion}");
         }
 
     }
