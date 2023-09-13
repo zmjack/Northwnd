@@ -13,12 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwndApp", "NorthwndApp\NorthwndApp.csproj", "{1EA3DA3B-3B12-4A4D-A324-12B556E942C4}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "NorthwndCore", "NorthwndCore\NorthwndCore.shproj", "{678F845B-FE31-4094-9C76-7FA0367DD169}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd.Memory", "Northwnd.Memory\Northwnd.Memory.csproj", "{62A02A64-712D-4069-9A49-D760C94E2F6F}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Nuget", "Nuget\Nuget.shproj", "{D4FCD5F6-ADF9-4103-A086-4DD127F4922A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd - EF2.0", "Northwnd - EF2.0\Northwnd - EF2.0.csproj", "{DED2B298-C480-4F25-B0C5-05471788B415}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd - EF6.0", "Northwnd - EF6.0\Northwnd - EF6.0.csproj", "{D9908333-E096-4745-979F-9F143281F74C}"
@@ -26,6 +20,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd - EF7.0", "Northwnd - EF7.0\Northwnd - EF7.0.csproj", "{D6F712E3-3F83-468B-9C48-900459C55AF2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd - EF3.1", "Northwnd - EF3.1\Northwnd - EF3.1.csproj", "{2094FADE-E6B6-4F9B-9471-C94B9BE809D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd.Core", "Northwnd.Core\Northwnd.Core.csproj", "{BEB2CCD8-C4DD-4A12-8E93-A62BF8A317A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +33,6 @@ Global
 		{1EA3DA3B-3B12-4A4D-A324-12B556E942C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EA3DA3B-3B12-4A4D-A324-12B556E942C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EA3DA3B-3B12-4A4D-A324-12B556E942C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{62A02A64-712D-4069-9A49-D760C94E2F6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62A02A64-712D-4069-9A49-D760C94E2F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62A02A64-712D-4069-9A49-D760C94E2F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62A02A64-712D-4069-9A49-D760C94E2F6F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DED2B298-C480-4F25-B0C5-05471788B415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DED2B298-C480-4F25-B0C5-05471788B415}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DED2B298-C480-4F25-B0C5-05471788B415}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,24 +49,15 @@ Global
 		{2094FADE-E6B6-4F9B-9471-C94B9BE809D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2094FADE-E6B6-4F9B-9471-C94B9BE809D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2094FADE-E6B6-4F9B-9471-C94B9BE809D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEB2CCD8-C4DD-4A12-8E93-A62BF8A317A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEB2CCD8-C4DD-4A12-8E93-A62BF8A317A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEB2CCD8-C4DD-4A12-8E93-A62BF8A317A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEB2CCD8-C4DD-4A12-8E93-A62BF8A317A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8E0AA18B-00C6-4155-8D18-45BD4B221247}
-	EndGlobalSection
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		NorthwndCore\NorthwndCore.projitems*{2094fade-e6b6-4f9b-9471-c94b9be809d0}*SharedItemsImports = 5
-		Nuget\Nuget.projitems*{2094fade-e6b6-4f9b-9471-c94b9be809d0}*SharedItemsImports = 5
-		NorthwndCore\NorthwndCore.projitems*{62a02a64-712d-4069-9a49-d760c94e2f6f}*SharedItemsImports = 5
-		NorthwndCore\NorthwndCore.projitems*{678f845b-fe31-4094-9c76-7fa0367dd169}*SharedItemsImports = 13
-		Nuget\Nuget.projitems*{d4fcd5f6-adf9-4103-a086-4dd127f4922a}*SharedItemsImports = 13
-		NorthwndCore\NorthwndCore.projitems*{d6f712e3-3f83-468b-9c48-900459c55af2}*SharedItemsImports = 5
-		Nuget\Nuget.projitems*{d6f712e3-3f83-468b-9c48-900459c55af2}*SharedItemsImports = 5
-		NorthwndCore\NorthwndCore.projitems*{d9908333-e096-4745-979f-9f143281f74c}*SharedItemsImports = 5
-		Nuget\Nuget.projitems*{d9908333-e096-4745-979f-9f143281f74c}*SharedItemsImports = 5
-		NorthwndCore\NorthwndCore.projitems*{ded2b298-c480-4f25-b0c5-05471788b415}*SharedItemsImports = 5
-		Nuget\Nuget.projitems*{ded2b298-c480-4f25-b0c5-05471788b415}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

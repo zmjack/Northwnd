@@ -7,7 +7,7 @@ namespace NorthwndApp
     {
         public NorthwndContext CreateDbContext(string[] args)
         {
-            return new NorthwndContext(Program.ApplicationDefaultDbContextOptions);
+            return new NorthwndContext(Program.ApplicationDefaultDbContextOptions, Program.DefaultPrefix);
         }
     }
 

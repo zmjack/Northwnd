@@ -1,31 +1,16 @@
 using Microsoft.EntityFrameworkCore;
-#if !DEBUG
-using NorthwndCore._extern.Def;
-using System.Reflection;
-#endif
+using Northwnd.Data;
+using System.Linq;
 
 namespace Northwnd
 {
     public class NorthwndContext : DbContext
     {
-        public NorthwndContext(DbContextOptions options)
-            : base(options)
-        {
-        }
+        private readonly string _prefix;
 
-        /// <summary>
-        /// Use sqlite resource from nuget packages folder.
-        /// </summary>
-        /// <returns></returns>
-        public static NorthwndContext UseSqliteResource()
+        public NorthwndContext(DbContextOptions options, string prefix) : base(options)
         {
-#if DEBUG
-            return new NorthwndContext(new DbContextOptionsBuilder().UseSqlite(
-                $@"filename=@Resources\Northwnd\northwnd.db").Options);
-#else
-            return new NorthwndContext(new DbContextOptionsBuilder().UseSqlite(
-                $@"filename={NuGet.PackageFolder(Assembly.GetExecutingAssembly())}content/@Resources/Northwnd/northwnd.db").Options);
-#endif
+            _prefix = prefix;
         }
 
         public virtual DbSet<Category> Categories { get; set; }
@@ -53,6 +38,16 @@ namespace Northwnd
                 .WithOne(e => e.Superordinate)
                 .HasForeignKey(e => e.ReportsTo);
 
+            modelBuilder.Entity<Employee>()
+                .HasMany(e => e.EmployeeTerritories)
+                .WithOne(e => e.EmployeeLink)
+                .HasForeignKey(e => e.EmployeeID);
+
+            modelBuilder.Entity<Territory>()
+                .HasMany(e => e.EmployeeTerritories)
+                .WithOne(e => e.TerritoryLink)
+                .HasForeignKey(e => e.TerritoryID);
+
             modelBuilder.Entity<Order>()
                 .HasMany(e => e.OrderDetails)
                 .WithOne(e => e.OrderLink)
@@ -67,10 +62,8 @@ namespace Northwnd
                 .HasMany(e => e.Territories)
                 .WithOne(e => e.Region)
                 .OnDelete(DeleteBehavior.Restrict);
-        }
 
-        public void UseNorthwndPrefix(ModelBuilder modelBuilder, string prefix)
-        {
+            var prefix = _prefix.EndsWith(".") ? _prefix : _prefix + ".";
             modelBuilder.Entity<Category>().ToTable($"{prefix}{nameof(Categories)}");
             modelBuilder.Entity<CustomerDemographic>().ToTable($"{prefix}{nameof(CustomerDemographics)}");
             modelBuilder.Entity<Customer>().ToTable($"{prefix}{nameof(Customers)}");
@@ -86,53 +79,50 @@ namespace Northwnd
             modelBuilder.Entity<EmployeeTerritory>().ToTable($"{prefix}{nameof(EmployeeTerritories)}");
         }
 
-        public void WriteTo(NorthwndContext targetContext)
+        public void InitializeNorthwnd(INorthwndMemoryContext memoryContext)
         {
-            targetContext.Database.Migrate();
+            using var trans = Database.BeginTransaction();
 
-            using (var trans = targetContext.Database.BeginTransaction())
-            {
-                targetContext.AddRange(Regions);
-                targetContext.SaveChanges();
+            AddRange(memoryContext.Regions.ToArray());
+            SaveChanges();
 
-                targetContext.AddRange(Territories);
-                targetContext.SaveChanges();
+            AddRange(memoryContext.Territories.ToArray());
+            SaveChanges();
 
-                targetContext.AddRange(Employees);
-                targetContext.SaveChanges();
+            AddRange(memoryContext.Employees.ToArray());
+            SaveChanges();
 
-                targetContext.AddRange(EmployeeTerritories);
-                targetContext.SaveChanges();
+            AddRange(memoryContext.EmployeeTerritories.ToArray());
+            SaveChanges();
 
-                targetContext.AddRange(Categories);
-                targetContext.SaveChanges();
+            AddRange(memoryContext.Categories.ToArray());
+            SaveChanges();
 
-                targetContext.AddRange(Suppliers);
-                targetContext.SaveChanges();
+            AddRange(memoryContext.Suppliers.ToArray());
+            SaveChanges();
 
-                targetContext.AddRange(Products);
-                targetContext.SaveChanges();
+            AddRange(memoryContext.Products.ToArray());
+            SaveChanges();
 
-                targetContext.AddRange(Shippers);
-                targetContext.SaveChanges();
+            AddRange(memoryContext.Shippers.ToArray());
+            SaveChanges();
 
-                targetContext.AddRange(CustomerDemographics);
-                targetContext.SaveChanges();
+            AddRange(memoryContext.CustomerDemographics.ToArray());
+            SaveChanges();
 
-                targetContext.AddRange(Customers);
-                targetContext.SaveChanges();
+            AddRange(memoryContext.Customers.ToArray());
+            SaveChanges();
 
-                targetContext.AddRange(CustomerCustomerDemos);
-                targetContext.SaveChanges();
+            AddRange(memoryContext.CustomerCustomerDemos.ToArray());
+            SaveChanges();
 
-                targetContext.AddRange(Orders);
-                targetContext.SaveChanges();
+            AddRange(memoryContext.Orders.ToArray());
+            SaveChanges();
 
-                targetContext.AddRange(OrderDetails);
-                targetContext.SaveChanges();
+            AddRange(memoryContext.OrderDetails.ToArray());
+            SaveChanges();
 
-                trans.Commit();
-            }
+            trans.Commit();
         }
 
     }
