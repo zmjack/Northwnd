@@ -19,10 +19,6 @@
     <AssemblyName>Northwnd</AssemblyName>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>D:\TeamProjects\SimpleData\Northwnd\Northwnd.xml</DocumentationFile>
-  </PropertyGroup>
-
   <ItemGroup>
     <None Remove="@Resources\SimpleData\Northwnd.png" />
     <None Include="..\LICENSE.md">
