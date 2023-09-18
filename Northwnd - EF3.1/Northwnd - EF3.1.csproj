@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>3.1.5</Version>
+    <Version>3.1.7002</Version>
     <Authors>zmjack</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Northwnd</PackageId>
@@ -43,5 +43,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Northwnd.Core\Northwnd.Core.csproj" />
   </ItemGroup>
+
+  <Import Project="..\Northwnd.Shared\Northwnd.Shared.projitems" Label="Shared" />
 
 </Project>

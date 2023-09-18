@@ -3,14 +3,14 @@ using Northwnd;
 
 namespace NorthwndApp
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
             var factory = new NorthwndFactory();
             using var context = factory.CreateDbContext();
 
-            if (!context.Database.GetMigrations().Any())
+            if (!context.Database.GetAppliedMigrations().Any())
             {
                 context.Database.Migrate();
                 context.InitializeNorthwnd(new NorthwndMemoryContext());
@@ -23,6 +23,5 @@ namespace NorthwndApp
 
             Console.WriteLine(sql);
         }
-
     }
 }

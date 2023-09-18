@@ -8,6 +8,9 @@ namespace Northwnd
     {
         private readonly string _prefix;
 
+        public NorthwndContext(DbContextOptions options) : base(options)
+        {
+        }
         public NorthwndContext(DbContextOptions options, string prefix) : base(options)
         {
             _prefix = prefix;
@@ -63,7 +66,12 @@ namespace Northwnd
                 .WithOne(e => e.Region)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            var prefix = _prefix.EndsWith(".") ? _prefix : _prefix + ".";
+            var prefix = string.IsNullOrWhiteSpace(_prefix)
+                ? string.Empty
+                : _prefix.EndsWith(".")
+                    ? _prefix
+                    : _prefix + ".";
+
             modelBuilder.Entity<Category>().ToTable($"{prefix}{nameof(Categories)}");
             modelBuilder.Entity<CustomerDemographic>().ToTable($"{prefix}{nameof(CustomerDemographics)}");
             modelBuilder.Entity<Customer>().ToTable($"{prefix}{nameof(Customers)}");
