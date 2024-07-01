@@ -51,5 +51,5 @@ Console output:
 
 ## Database diagram
 
-![](https://raw.githubusercontent.com/zmjack/Northwnd/master/Northwnd/%40Resources/Northwnd/Northwnd.png)
+![](https://raw.githubusercontent.com/zmjack/Northwnd/master/Northwnd/Northwnd/Northwnd.png)
 
