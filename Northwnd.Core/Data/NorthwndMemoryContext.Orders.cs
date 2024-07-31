@@ -4,7 +4,7 @@ namespace Northwnd
 {
     public partial class NorthwndMemoryContext
     {
-        public Order[] InitOrders()
+        private Order[] InitOrders()
         {
             return new[]
             {

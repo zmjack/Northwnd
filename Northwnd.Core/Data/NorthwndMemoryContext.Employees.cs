@@ -4,7 +4,7 @@ namespace Northwnd
 {
     public partial class NorthwndMemoryContext
     {
-        public Employee[] InitEmployees()
+        private Employee[] InitEmployees()
         {
             return new[]
             {

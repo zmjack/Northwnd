@@ -4,7 +4,7 @@ namespace Northwnd
 {
     public partial class NorthwndMemoryContext
     {
-        public Region[] InitRegions()
+        private Region[] InitRegions()
         {
             return new[]
             {

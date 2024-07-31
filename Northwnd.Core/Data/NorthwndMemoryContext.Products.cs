@@ -4,7 +4,7 @@ namespace Northwnd
 {
     public partial class NorthwndMemoryContext
     {
-        public Product[] InitProducts()
+        private Product[] InitProducts()
         {
             return new[]
             {

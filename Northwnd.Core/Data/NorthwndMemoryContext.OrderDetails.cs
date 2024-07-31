@@ -4,7 +4,7 @@ namespace Northwnd
 {
     public partial class NorthwndMemoryContext
     {
-        public OrderDetail[] InitOrderDetails()
+        private OrderDetail[] InitOrderDetails()
         {
             return new[]
             {

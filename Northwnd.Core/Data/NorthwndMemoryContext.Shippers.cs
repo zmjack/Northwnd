@@ -4,7 +4,7 @@ namespace Northwnd
 {
     public partial class NorthwndMemoryContext
     {
-        public Shipper[] InitShippers()
+        private Shipper[] InitShippers()
         {
             return new[]
             {

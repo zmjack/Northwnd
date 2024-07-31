@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Northwnd.Data
 {
-    public interface INorthwndMemoryContext
+    public interface INorthwndMemoryContext<TSelf>
     {
         Category[] Categories { get; }
         CustomerDemographic[] CustomerDemographics { get; }
@@ -20,6 +20,6 @@ namespace Northwnd.Data
         CustomerCustomerDemo[] CustomerCustomerDemos { get; }
         EmployeeTerritory[] EmployeeTerritories { get; }
 
-        void IncludeAll();
+        TSelf IncludeAll();
     }
 }

@@ -4,7 +4,7 @@ namespace Northwnd
 {
     public partial class NorthwndMemoryContext
     {
-        public CustomerDemographic[] InitCustomerDemographics()
+        private CustomerDemographic[] InitCustomerDemographics()
         {
             return Array.Empty<CustomerDemographic>();
         }
