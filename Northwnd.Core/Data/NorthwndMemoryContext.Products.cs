@@ -1,13 +1,13 @@
-﻿using Northwnd.Data;
+﻿namespace Northwnd;
 
-namespace Northwnd
+public partial class NorthwndMemoryContext
 {
-    public partial class NorthwndMemoryContext
+    protected static partial class Initailizer
     {
-        private Product[] InitProducts()
+        public static Product[] GetInitProducts()
         {
-            return new[]
-            {
+            return
+            [
                 new Product
                 {
                     ProductID = 1,
@@ -1009,8 +1009,7 @@ namespace Northwnd
                     ReorderLevel = 15,
                     Discontinued = false,
                 },
-            };
-
+            ];
         }
     }
 }

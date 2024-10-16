@@ -1,17 +1,16 @@
-﻿namespace Northwnd.Package
+﻿namespace Northwnd.Package;
+
+public static class Setting
 {
-    public static class Setting
+    public static RuntimePlatform RuntimePlatform;
+
+    public static void UseDefault()
     {
-        public static RuntimePlatform RuntimePlatform;
+        RuntimePlatform = RuntimePlatform.Default;
+    }
 
-        public static void UseDefault()
-        {
-            RuntimePlatform = RuntimePlatform.Default;
-        }
-
-        public static void UseDotNetFiddle()
-        {
-            RuntimePlatform = RuntimePlatform.DotNetFiddle;
-        }
+    public static void UseDotNetFiddle()
+    {
+        RuntimePlatform = RuntimePlatform.DotNetFiddle;
     }
 }

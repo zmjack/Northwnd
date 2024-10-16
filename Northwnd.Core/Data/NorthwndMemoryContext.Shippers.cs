@@ -1,13 +1,13 @@
-using Northwnd.Data;
+namespace Northwnd;
 
-namespace Northwnd
+public partial class NorthwndMemoryContext
 {
-    public partial class NorthwndMemoryContext
+    protected static partial class Initailizer
     {
-        private Shipper[] InitShippers()
+        public static Shipper[] GetInitShippers()
         {
-            return new[]
-            {
+            return
+            [
                 new Shipper
                 {
                     ShipperID = 1,
@@ -26,8 +26,7 @@ namespace Northwnd
                     CompanyName = "Federal Shipping",
                     Phone = "(503) 555-9931",
                 },
-            };
-
+            ];
         }
     }
 }

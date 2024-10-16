@@ -1,17 +1,15 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 
-namespace Northwnd.Data
+namespace Northwnd.Data;
+
+public class CustomerDemographic
 {
-    public class CustomerDemographic
-    {
-        [Key]
-        [StringLength(10)]
-        public string CustomerTypeID { get; set; }
+    [Key]
+    [StringLength(10)]
+    public string CustomerTypeID { get; set; }
 
-        public string CustomerDesc { get; set; }
+    public string CustomerDesc { get; set; }
 
-        public virtual ICollection<CustomerCustomerDemo> CustomerCustomerDemos { get; set; }
-    }
+    public virtual ICollection<CustomerCustomerDemo> CustomerCustomerDemos { get; set; }
 }

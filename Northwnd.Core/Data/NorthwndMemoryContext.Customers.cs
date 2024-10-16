@@ -1,13 +1,13 @@
-﻿using Northwnd.Data;
+﻿namespace Northwnd;
 
-namespace Northwnd
+public partial class NorthwndMemoryContext
 {
-    public partial class NorthwndMemoryContext
+    protected static partial class Initailizer
     {
-        private Customer[] InitCustomers()
+        public static Customer[] GetInitCustomers()
         {
-            return new[]
-            {
+            return
+            [
                 new Customer
                 {
                     CustomerID = "ALFKI",
@@ -1282,8 +1282,7 @@ namespace Northwnd
                     Phone = "(26) 642-7012",
                     Fax = "(26) 642-7012",
                 },
-            };
-
+            ];
         }
     }
 }

@@ -1,13 +1,13 @@
-using Northwnd.Data;
+namespace Northwnd;
 
-namespace Northwnd
+public partial class NorthwndMemoryContext
 {
-    public partial class NorthwndMemoryContext
+    protected static partial class Initailizer
     {
-        private OrderDetail[] InitOrderDetails()
+        public static OrderDetail[] GetInitOrderDetails()
         {
-            return new[]
-            {
+            return
+            [
                 new OrderDetail
                 {
                     OrderID = 10248,
@@ -17248,8 +17248,7 @@ namespace Northwnd
                     Quantity = 2,
                     Discount = 0f,
                 },
-            };
-
+            ];
         }
     }
 }

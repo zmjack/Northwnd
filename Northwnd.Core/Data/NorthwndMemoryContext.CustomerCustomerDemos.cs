@@ -1,12 +1,12 @@
-using Northwnd.Data;
+namespace Northwnd;
 
-namespace Northwnd
+public partial class NorthwndMemoryContext
 {
-    public partial class NorthwndMemoryContext
+    protected static partial class Initailizer
     {
-        private CustomerCustomerDemo[] InitCustomerCustomerDemos()
+        public static CustomerCustomerDemo[] GetInitCustomerCustomerDemos()
         {
-            return Array.Empty<CustomerCustomerDemo>();
+            return [];
         }
     }
 }

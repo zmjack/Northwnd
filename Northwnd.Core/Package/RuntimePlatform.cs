@@ -1,8 +1,7 @@
-﻿namespace Northwnd.Package
+﻿namespace Northwnd.Package;
+
+public enum RuntimePlatform
 {
-    public enum RuntimePlatform
-    {
-        Default,
-        DotNetFiddle,
-    }
+    Default,
+    DotNetFiddle,
 }

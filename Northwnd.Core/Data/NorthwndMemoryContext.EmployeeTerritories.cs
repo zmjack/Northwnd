@@ -1,13 +1,13 @@
-using Northwnd.Data;
+namespace Northwnd;
 
-namespace Northwnd
+public partial class NorthwndMemoryContext
 {
-    public partial class NorthwndMemoryContext
+    protected static partial class Initailizer
     {
-        private EmployeeTerritory[] InitEmployeeTerritories()
+        public static EmployeeTerritory[] GetInitEmployeeTerritories()
         {
-            return new[]
-            {
+            return
+            [
                 new EmployeeTerritory
                 {
                     EmployeeID = 1,
@@ -253,8 +253,7 @@ namespace Northwnd
                     EmployeeID = 9,
                     TerritoryID = "55439",
                 },
-            };
-
+            ];
         }
     }
 }

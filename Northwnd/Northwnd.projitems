@@ -3,10 +3,10 @@
   <PropertyGroup>
     <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>6025399f-3b92-4808-adcd-df847de64463</SharedGUID>
+    <SharedGUID>7d23b9c1-02de-4455-80a4-5553b4ba891b</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>Northwnd.Shared</Import_RootNamespace>
+    <Import_RootNamespace>Northwnd</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)NorthwndContext.cs" />

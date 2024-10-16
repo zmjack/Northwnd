@@ -18,19 +18,19 @@ public partial class NorthwndMemoryContext : INorthwndMemoryContext<NorthwndMemo
 
     public NorthwndMemoryContext()
     {
-        Categories = InitCategories();
-        CustomerDemographics = InitCustomerDemographics();
-        Customers = InitCustomers();
-        Employees = InitEmployees();
-        OrderDetails = InitOrderDetails();
-        Orders = InitOrders();
-        Products = InitProducts();
-        Regions = InitRegions();
-        Shippers = InitShippers();
-        Suppliers = InitSuppliers();
-        Territories = InitTerritories();
-        CustomerCustomerDemos = InitCustomerCustomerDemos();
-        EmployeeTerritories = InitEmployeeTerritories();
+        Categories = Initailizer.GetInitCategories();
+        CustomerDemographics = Initailizer.GetInitCustomerDemographics();
+        Customers = Initailizer.GetInitCustomers();
+        Employees = Initailizer.GetInitEmployees();
+        OrderDetails = Initailizer.GetInitOrderDetails();
+        Orders = Initailizer.GetInitOrders();
+        Products = Initailizer.GetInitProducts();
+        Regions = Initailizer.GetInitRegions();
+        Shippers = Initailizer.GetInitShippers();
+        Suppliers = Initailizer.GetInitSuppliers();
+        Territories = Initailizer.GetInitTerritories();
+        CustomerCustomerDemos = Initailizer.GetInitCustomerCustomerDemos();
+        EmployeeTerritories = Initailizer.GetInitEmployeeTerritories();
     }
 
     public NorthwndMemoryContext IncludeAll()

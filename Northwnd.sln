@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd - EF3.1", "Northwn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd.Core", "Northwnd.Core\Northwnd.Core.csproj", "{BEB2CCD8-C4DD-4A12-8E93-A62BF8A317A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwndApp.Sqlite", "NorthwndApp.Sqlite\NorthwndApp.Sqlite.csproj", "{53F13981-54F0-49B6-8E0A-0C573B74F4C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwndApp.Sqlite", "NorthwndApp.Sqlite\NorthwndApp.Sqlite.csproj", "{53F13981-54F0-49B6-8E0A-0C573B74F4C5}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Northwnd.Shared", "Northwnd.Shared\Northwnd.Shared.shproj", "{6025399F-3B92-4808-ADCD-DF847DE64463}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwnd - EF8.0", "Northwnd - EF8.0\Northwnd - EF8.0.csproj", "{20E97D93-E5FB-42FA-B9A8-E18F4D8928AD}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Northwnd", "Northwnd\Northwnd.shproj", "{7D23B9C1-02DE-4455-80A4-5553B4BA891B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{53F13981-54F0-49B6-8E0A-0C573B74F4C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53F13981-54F0-49B6-8E0A-0C573B74F4C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53F13981-54F0-49B6-8E0A-0C573B74F4C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20E97D93-E5FB-42FA-B9A8-E18F4D8928AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20E97D93-E5FB-42FA-B9A8-E18F4D8928AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20E97D93-E5FB-42FA-B9A8-E18F4D8928AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20E97D93-E5FB-42FA-B9A8-E18F4D8928AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,10 +75,11 @@ Global
 		SolutionGuid = {8E0AA18B-00C6-4155-8D18-45BD4B221247}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Northwnd.Shared\Northwnd.Shared.projitems*{2094fade-e6b6-4f9b-9471-c94b9be809d0}*SharedItemsImports = 5
-		Northwnd.Shared\Northwnd.Shared.projitems*{6025399f-3b92-4808-adcd-df847de64463}*SharedItemsImports = 13
-		Northwnd.Shared\Northwnd.Shared.projitems*{d6f712e3-3f83-468b-9c48-900459c55af2}*SharedItemsImports = 5
-		Northwnd.Shared\Northwnd.Shared.projitems*{d9908333-e096-4745-979f-9f143281f74c}*SharedItemsImports = 5
-		Northwnd.Shared\Northwnd.Shared.projitems*{ded2b298-c480-4f25-b0c5-05471788b415}*SharedItemsImports = 5
+		Northwnd\Northwnd.projitems*{2094fade-e6b6-4f9b-9471-c94b9be809d0}*SharedItemsImports = 5
+		Northwnd\Northwnd.projitems*{20e97d93-e5fb-42fa-b9a8-e18f4d8928ad}*SharedItemsImports = 5
+		Northwnd\Northwnd.projitems*{7d23b9c1-02de-4455-80a4-5553b4ba891b}*SharedItemsImports = 13
+		Northwnd\Northwnd.projitems*{d6f712e3-3f83-468b-9c48-900459c55af2}*SharedItemsImports = 5
+		Northwnd\Northwnd.projitems*{d9908333-e096-4745-979f-9f143281f74c}*SharedItemsImports = 5
+		Northwnd\Northwnd.projitems*{ded2b298-c480-4f25-b0c5-05471788b415}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

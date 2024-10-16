@@ -1,13 +1,13 @@
-using Northwnd.Data;
+namespace Northwnd;
 
-namespace Northwnd
+public partial class NorthwndMemoryContext
 {
-    public partial class NorthwndMemoryContext
+    protected static partial class Initailizer
     {
-        private Region[] InitRegions()
+        public static Region[] GetInitRegions()
         {
-            return new[]
-            {
+            return
+            [
                 new Region
                 {
                     RegionID = 1,
@@ -28,8 +28,7 @@ namespace Northwnd
                     RegionID = 4,
                     RegionDescription = "Southern",
                 },
-            };
-
+            ];
         }
     }
 }

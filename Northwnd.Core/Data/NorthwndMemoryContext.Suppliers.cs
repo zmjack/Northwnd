@@ -1,13 +1,13 @@
-﻿using Northwnd.Data;
+﻿namespace Northwnd;
 
-namespace Northwnd
+public partial class NorthwndMemoryContext
 {
-    public partial class NorthwndMemoryContext
+    protected static partial class Initailizer
     {
-        private Supplier[] InitSuppliers()
+        public static Supplier[] GetInitSuppliers()
         {
-            return new[]
-            {
+            return
+            [
                 new Supplier
                 {
                     SupplierID = 1,
@@ -443,8 +443,7 @@ namespace Northwnd
                     Fax = "(514) 555-2921",
                     HomePage = "NULL",
                 },
-            };
-
+            ];
         }
     }
 }
