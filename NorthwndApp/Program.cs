@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Ink;
+using Microsoft.EntityFrameworkCore;
 using Northwnd;
 
 namespace NorthwndApp;
@@ -10,18 +11,20 @@ class Program
         var factory = new NorthwndFactory();
         using var context = factory.CreateDbContext();
 
-        if (!context.Database.GetMigrations().Any())
+        if (context.Database.GetMigrations().Any())
         {
             context.Database.Migrate();
             context.InitializeNorthwnd(new NorthwndMemoryContext());
         }
 
-        var sql = (
+        var query = (
             from category in context.Employees
             select category.BirthDate
-        ).ToQueryString();
+        );
+        var sql = query.ToQueryString();
 
         Console.WriteLine(sql);
+        Echo.Table(query.Take(3).ToArray());
     }
 
 }
