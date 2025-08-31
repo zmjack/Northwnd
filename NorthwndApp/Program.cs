@@ -1,6 +1,7 @@
 ﻿using Ink;
 using Microsoft.EntityFrameworkCore;
 using Northwnd;
+using NStandard;
 
 namespace NorthwndApp;
 
@@ -26,5 +27,4 @@ class Program
         Console.WriteLine(sql);
         Echo.Table(query.Take(3).ToArray());
     }
-
 }

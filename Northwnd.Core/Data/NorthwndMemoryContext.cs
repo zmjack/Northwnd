@@ -16,7 +16,7 @@ public partial class NorthwndMemoryContext : INorthwndMemoryContext<NorthwndMemo
     public CustomerCustomerDemo[] CustomerCustomerDemos { get; }
     public EmployeeTerritory[] EmployeeTerritories { get; }
 
-    private NorthwndMemoryContext()
+    public NorthwndMemoryContext(bool includeAll = true)
     {
         Categories = Initailizer.GetInitCategories();
         CustomerDemographics = Initailizer.GetInitCustomerDemographics();
@@ -31,10 +31,7 @@ public partial class NorthwndMemoryContext : INorthwndMemoryContext<NorthwndMemo
         Territories = Initailizer.GetInitTerritories();
         CustomerCustomerDemos = Initailizer.GetInitCustomerCustomerDemos();
         EmployeeTerritories = Initailizer.GetInitEmployeeTerritories();
-    }
 
-    public NorthwndMemoryContext(bool includeAll = true) : base()
-    {
         if (includeAll) IncludeAll();
     }
 
