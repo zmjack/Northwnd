@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<Version>1.1.1</Version>
+		<Authors>zmjack</Authors>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>Northwnd.Memory</PackageId>
+		<Description>Simple database Northwnd of memory context.</Description>
+		<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+		<PackageProjectUrl>https://github.com/zmjack/Northwnd</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/zmjack/Northwnd</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>Northwnd CodeFirst</PackageTags>
+		<Copyright>Copyright © nstandard.net 2023</Copyright>
+		<Product>Northwnd.Memory</Product>
+		<LangVersion>preview</LangVersion>
+		<RootNamespace>Northwnd</RootNamespace>
+		<AssemblyName>Northwnd.Memory</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\LICENSE.md" Link="LICENSE.md">
+			<PackagePath></PackagePath>
+			<Pack>True</Pack>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Northwnd.Core\Northwnd.Core.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,6 +1,6 @@
 ﻿namespace Northwnd;
 
-public partial class NorthwndMemoryContext
+public partial class NorthwndFixedContext
 {
     protected static partial class Initailizer
     {

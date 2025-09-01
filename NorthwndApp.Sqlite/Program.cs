@@ -13,7 +13,7 @@ internal class Program
         if (!context.Database.GetAppliedMigrations().Any())
         {
             context.Database.Migrate();
-            context.InitializeNorthwnd(new NorthwndMemoryContext());
+            context.InitializeNorthwnd(new NorthwndFixedContext());
         }
 
         var sql = (

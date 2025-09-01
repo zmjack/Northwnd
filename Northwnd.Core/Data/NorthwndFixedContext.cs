@@ -1,6 +1,6 @@
 namespace Northwnd;
 
-public partial class NorthwndMemoryContext : INorthwndMemoryContext<NorthwndMemoryContext>
+public partial class NorthwndFixedContext
 {
     public Category[] Categories { get; }
     public CustomerDemographic[] CustomerDemographics { get; }
@@ -16,7 +16,7 @@ public partial class NorthwndMemoryContext : INorthwndMemoryContext<NorthwndMemo
     public CustomerCustomerDemo[] CustomerCustomerDemos { get; }
     public EmployeeTerritory[] EmployeeTerritories { get; }
 
-    public NorthwndMemoryContext(bool includeAll = true)
+    public NorthwndFixedContext(bool includeAll = true)
     {
         Categories = Initailizer.GetInitCategories();
         CustomerDemographics = Initailizer.GetInitCustomerDemographics();
@@ -35,7 +35,7 @@ public partial class NorthwndMemoryContext : INorthwndMemoryContext<NorthwndMemo
         if (includeAll) IncludeAll();
     }
 
-    public NorthwndMemoryContext IncludeAll()
+    public NorthwndFixedContext IncludeAll()
     {
         foreach (var item in Categories)
         {

@@ -111,47 +111,47 @@ public class NorthwndContext : DbContext
         }
     }
 
-    public void InitializeNorthwnd(NorthwndMemoryContext context)
+    public void InitializeNorthwnd(NorthwndFixedContext context)
     {
         using var trans = Database.BeginTransaction();
 
-        AddRange([.. context.Regions]);
+        AddRange(context.Regions);
         SaveChanges();
 
-        AddRange([.. context.Territories]);
+        AddRange(context.Territories);
         SaveChanges();
 
-        AddRange([.. context.Employees]);
+        AddRange(context.Employees);
         SaveChanges();
 
-        AddRange([.. context.EmployeeTerritories]);
+        AddRange(context.EmployeeTerritories);
         SaveChanges();
 
-        AddRange([.. context.Categories]);
+        AddRange(context.Categories);
         SaveChanges();
 
-        AddRange([.. context.Suppliers]);
+        AddRange(context.Suppliers);
         SaveChanges();
 
-        AddRange([.. context.Products]);
+        AddRange(context.Products);
         SaveChanges();
 
-        AddRange([.. context.Shippers]);
+        AddRange(context.Shippers);
         SaveChanges();
 
-        AddRange([.. context.CustomerDemographics]);
+        AddRange(context.CustomerDemographics);
         SaveChanges();
 
-        AddRange([.. context.Customers]);
+        AddRange(context.Customers);
         SaveChanges();
 
-        AddRange([.. context.CustomerCustomerDemos]);
+        AddRange(context.CustomerCustomerDemos);
         SaveChanges();
 
-        AddRange([.. context.Orders]);
+        AddRange(context.Orders);
         SaveChanges();
 
-        AddRange([.. context.OrderDetails]);
+        AddRange(context.OrderDetails);
         SaveChanges();
 
         trans.Commit();

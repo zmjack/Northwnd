@@ -7,7 +7,7 @@ namespace NorthwndApp;
 
 public class NorthwndFactory : IDesignTimeDbContextFactory<NorthwndContext>
 {
-    private static readonly string _connectionString = "server=127.0.0.1;database=northwnd";
+    private static readonly string _connectionString = "DataSource=file::memory:?cache=shared";
     private static readonly Lazy<ServerVersion> _dbVersion = new(() => ServerVersion.AutoDetect(_connectionString));
 
     public NorthwndContext CreateDbContext(params string[] args)
